@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=UnifrakturCook:wght@700&display=swap');
+
 main {
   display: flex;
   flex-direction: column;
@@ -10,11 +12,26 @@ main {
   border-radius: 1em;
 }
 
+.full-name {
+  font-family: "UnifrakturCook", cursive;
+  margin-bottom: 1em;
+}
+
+.full-name > span {
+  font-size: 1.2em;
+}
+
+.full-name > .name {
+  font-size: 1.3em;
+}
+
 .post {
   text-align: left;
+  font-family: "MedievalSharp", cursive;
+  line-height: 1em;
 }
 
 .post::first-letter {
   font-size: 3em;
-  line-height: 1em;
+  line-height: .8em;
 }
