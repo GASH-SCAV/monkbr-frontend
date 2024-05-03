@@ -11,6 +11,21 @@ class MonkService {
     })
     .then(res => res.json())
   }
+
+  login  = (monk) => {
+    return fetch(api + "/login", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(monk),
+    })
+    .then(res => res.json())
+  }
+
+  getUser = (id) => {
+    return fetch(api + `/monks/${id}`).then(res => res.json())
+  }
 }
 
 export default MonkService;

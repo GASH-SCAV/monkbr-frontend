@@ -1,40 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import UserContainer from "./containers/UserContainer"
+import MonkService from './services/MonkService';
+import Feed from './containers/Feed';
+const defaultMonk = {name: "", posts: []}
 
 function App() {
-  const [user, setMonk] = useState({username: ""})
+  const [monk, setMonk] = useState(defaultMonk)
   
   const defineUser = (user) => {
-    localStorage.setItem("username", user.username)
+    localStorage.setItem("id", user.id)
     setMonk(user)
   }
 
-  console.log(defineUser)
+  useEffect(() => {
+    const userId = localStorage.getItem("id")
+    const monkService = new MonkService()
+    userId && monkService.getUser(userId).then(user => setMonk(user))
+  }, [])
 
-  if(user.username){
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  } else {
-    return <UserContainer defineUser={defineUser}/>
+  const logout = () => {
+    localStorage.removeItem("id")
+    setMonk(defaultMonk)
   }
+
+  return (
+    <main>
+      {monk.name ? <Feed monk={monk}/> : <UserContainer defineUser={defineUser}/>}
+      <button value="Logout" onClick={() => logout()}></button>
+    </main>
+  )
 }
 
 export default App;
