@@ -8,6 +8,7 @@ function Signup({defineUser}){
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [alert, setAlert] = useState("")
+  const [location, setLocation] = useState("")
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -15,7 +16,7 @@ function Signup({defineUser}){
     if (password !== confirmPassword){
       setAlert("Your answers for favorite saint must match!")
     } else {
-      monkService.setMonk({monkName, password}).then((res) => {
+      monkService.setMonk({monkName, location, password}).then((res) => {
         if (res.error){
           setAlert(res.error)
         } else {
@@ -31,6 +32,9 @@ function Signup({defineUser}){
     <form onSubmit={onSubmit}>
       <label>
         Name <input type="text" onChange={(e) => {setMonkName(e.target.value)}} value={monkName} />
+      </label>
+      <label>
+        Location <input type="text" onChange={(e) => {setLocation(e.target.value)}} value={location} />
       </label>
       <label>
         Favorite Saint (case sensitive) <input type="text" onChange={(e) => {setPassword(e.target.value)}} value={password} />
