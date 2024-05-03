@@ -6,9 +6,9 @@ function UserContainer({defineUser}){
   const toggleLogin = () => setLogin(!login)
   const form = login ? <Login defineUser={defineUser}/> : <Signup defineUser={defineUser}/>
   
-  return <>
+  return <div className="user-container">
     {form}
     <button onClick={toggleLogin}>Or {login ? "Signup!" : "Login"}</button>
-  </>
+  </div>
 }
 export default UserContainer;

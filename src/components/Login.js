@@ -25,10 +25,10 @@ function Login({defineUser}){
     {alert && <div class="alert">{alert}</div>}
     <form onSubmit={onSubmit}>
       <label>
-        Name: <input type="text" onChange={(e) => {setMonkName(e.target.value)}} value={monkName} />
+        Name <input type="text" onChange={(e) => {setMonkName(e.target.value)}} value={monkName} />
       </label>
       <label>
-        Favorite Saint (case sensitive): <input type="text" onChange={(e) => {setPassword(e.target.value)}} value={password} />
+        Favorite Saint (case sensitive) <input type="text" onChange={(e) => {setPassword(e.target.value)}} value={password} />
       </label>
       <input type="submit" value="Login"/>
     </form>

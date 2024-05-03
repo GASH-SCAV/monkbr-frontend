@@ -85,3 +85,29 @@ header {
   font-size: 3em;
   line-height: .8em;
 }
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "MedievalSharp", cursive;
+  margin: 1em;
+}
+
+.user-container * {
+  margin-bottom: .5em;
+}
+
+.user-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-container form input[type=submit], button {
+  width: 100%;
+  font-family: "MedievalSharp", cursive;
+}
+
+.user-container form input {
+  width: 100%;
+}
+
