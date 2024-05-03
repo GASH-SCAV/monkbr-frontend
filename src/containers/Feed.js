@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Posts from "./Posts"
 import PostForm from "../components/PostForm";
 import PostService from "../services/PostService";
-function Feed({monk}){
+function Feed({monk, logout}){
   const [posts, setPosts] = useState([])
   const fetchPosts = () => (PostService.getPosts().then(setPosts))
   
@@ -15,6 +15,7 @@ function Feed({monk}){
   }, [])
 
   return <>
+    <header onClick={() => logout()}>Logout</header>
     <PostForm createPost={createPost}/>
     <Posts posts={posts}/>
   </>

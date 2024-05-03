@@ -26,10 +26,11 @@ function App() {
   }
 
   return (
-    <main>
-      {monk.name ? <Feed monk={monk}/> : <UserContainer defineUser={defineUser}/>}
-      <button value="Logout" onClick={() => logout()}></button>
-    </main>
+    <div className="app">
+      <main>
+        {monk.name ? <Feed monk={monk} logout={logout}/> : <UserContainer defineUser={defineUser}/>}
+      </main>
+    </div>
   )
 }
 

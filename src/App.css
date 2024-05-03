@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Rouge+Script&family=UnifrakturCook:wght@700&display=swap');
+
 main {
   display: flex;
   flex-direction: column;
 }
+
+header {
+  text-align: center;
+  border: .2em solid brown;
+  padding: .5em;
+  margin: .5em;
+}
+
 .post-form {
   display: flex;
   flex-direction: column;
