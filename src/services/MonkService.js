@@ -1,4 +1,4 @@
-const api = !process.env.NODE_ENV || process.env.NODE_ENV === 'development' ? "http://localhost:3000" : "tbd"
+const api = !process.env.NODE_ENV || process.env.NODE_ENV === 'development' ? "http://localhost:3000" : "https://monkblr-backend-12e8009f9c9c.herokuapp.com"
 
 class MonkService {
   setMonk = (monk) => {
