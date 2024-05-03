@@ -1,9 +1,8 @@
 import PostCard from "./PostCard"
 
-function Posts({posts}){
-  console.log(posts)
+function Posts({posts, setSelectedPostId}){
   return <main className="posts">
-    {posts.map(post => <PostCard {...post} /> )}
+    {posts.map(post => <PostCard post={post} setSelectedPostId={setSelectedPostId} key={post.id} /> )}
   </main>
 }
 export default Posts

@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 import UserContainer from "./containers/UserContainer"
 import MonkService from './services/MonkService';
 import Feed from './containers/Feed';
+
 const defaultMonk = {name: "", posts: []}
 
 function App() {

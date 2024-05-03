@@ -1,4 +1,4 @@
-const api = "https://monkblr-backend-12e8009f9c9c.herokuapp.com"
+const api = process.env.REACT_APP_ENVIRONMENT === "development" ? "http://localhost:3000" : "https://monkblr-backend-12e8009f9c9c.herokuapp.com"
 
 class MonkService {
   setMonk = (monk) => {
