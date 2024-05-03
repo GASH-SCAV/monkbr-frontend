@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=UnifrakturCook:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Rouge+Script&family=UnifrakturCook:wght@700&display=swap');
 main {
   display: flex;
   flex-direction: column;
 }
 
 .post-card {
-  border: brown .25em solid;
+  border: brown .2em solid;
   margin: .25em;
   padding: .75em;
   border-radius: 1em;
@@ -23,6 +22,12 @@ main {
 
 .full-name > .name {
   font-size: 1.3em;
+}
+
+.date {
+  text-align: right;
+  font-family: "Rouge Script", cursive;
+  font-size: 1.2em;
 }
 
 .post {
