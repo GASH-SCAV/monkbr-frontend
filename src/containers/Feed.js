@@ -8,7 +8,6 @@ function Feed({monk, logout}){
   const [posts, setPosts] = useState([])
   const [selectedPostId, setSelectedPostId] = useState("")
   const [incrementToRefresh, setIncrementToRefresh] = useState("")
-  console.log('posts', posts)
 
   const fetchPosts = () => (PostService.getPosts().then(setPosts))
   
@@ -24,7 +23,6 @@ function Feed({monk, logout}){
   }, [])
 
   const goToFeed = () => {
-    console.log("squirtle")
     fetchPosts().then(() => setSelectedPostId(""))
   }
 

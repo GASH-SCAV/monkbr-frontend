@@ -15,7 +15,7 @@ function Thread({selectedPostId, goToFeed, incrementToRefresh}){
     <div className="reply-to">Reply to</div>
     <PostCard post={post} key={post.id} hideMarginaliaButton={true} />
     <button onClick={goToFeed}>Go back</button>
-    {post.replies.map(post => <PostCard post={post} key={post.id} />)}
+    {post.replies.map(post => <PostCard post={post} key={post.id} hideMarginaliaButton={true} />)}
   </main>
 }
 
