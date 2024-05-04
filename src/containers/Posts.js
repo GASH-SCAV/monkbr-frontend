@@ -10,8 +10,22 @@ function Posts({incrementToRefresh}){
     fetchPosts()
   }, [incrementToRefresh])
 
+  const changeLikes = (postId, likesCount) => {
+    const newPosts = [...posts]
+    const index = newPosts.findIndex(obj => obj.id == postId);
+    newPosts[index].sanctifies = likesCount.likes
+    setPosts(newPosts)
+  }
+
+  const changeCondemns = (postId, condemnsCount) => {
+    const newPosts = [...posts]
+    const index = newPosts.findIndex(obj => obj.id == postId);
+    newPosts[index].condemns = condemnsCount.condemns
+    setPosts(newPosts)
+  }
+
   return <main className="posts">
-    {posts.map(post => <PostCard post={post} key={post.id} /> )}
+    {posts.map(post => <PostCard post={post} changeLikes={changeLikes} changeCondemns={changeCondemns} key={post.id} /> )}
   </main>
 }
 export default Posts
