@@ -12,9 +12,9 @@ function Thread({selectedPostId, goToFeed, incrementToRefresh}){
   }, [incrementToRefresh])
 
   return <main className="posts">
-    <div className="reply-to">Reply to</div>
+    <div className="reply-to">Reply to...</div>
     <PostCard post={post} key={post.id} hideMarginaliaButton={true} />
-    <button onClick={goToFeed}>Go back</button>
+    <div className="button-parent"><button className="child-button" onClick={goToFeed}>⬴Go back</button></div>
     {post.replies.map(post => <PostCard post={post} key={post.id} hideMarginaliaButton={true} />)}
   </main>
 }

@@ -28,6 +28,11 @@ function Feed({monk, logout}){
 
   return <>
     <header onClick={() => logout()}>Logout</header>
+    <div className="announcement">
+      <marquee><h1>Episcopus Elonius nunc Marginalia ad Monkblr introducit!</h1></marquee>
+      <p>Nunc poteritis respondere membris clericis haereticis in tempore reali.</p>
+      <footer>Monkblr: App pro Omnia</footer>
+    </div>
     <PostForm createPost={createPost} postId={selectedPostId}/>
     {selectedPostId ? <Thread selectedPostId={selectedPostId} goToFeed={goToFeed} incrementToRefresh={incrementToRefresh}/> : <Posts posts={posts} setSelectedPostId={setSelectedPostId} postId={selectedPostId}/>}
   </>

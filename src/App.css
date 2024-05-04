@@ -3,6 +3,7 @@
 body {
   max-width: 600px;
   margin: 0 auto;
+  font-family: "MedievalSharp", cursive;
 }
 
 main {
@@ -112,7 +113,47 @@ header {
   font-family: "MedievalSharp", cursive;
 }
 
+.child-button {
+  border: none;
+  background-color: inherit;
+  font-size: 1.2em;
+  color: brown;
+  font-family: "UnifrakturCook", cursive;
+}
+
+.reply-to {
+  width: 100%;
+  text-align: center;
+  padding: .25em;
+  font-family: "UnifrakturCook", cursive;
+  color: brown;
+  font-size: 1.2em;
+}
+
+.child-button.marginalia {
+  font-size: 1em;
+  color: slategray;
+}
+
 .user-container form input {
   width: 100%;
 }
 
+.announcement {
+  background-color: brown;
+  border-radius: 1em;
+  margin: 0 auto;
+  padding: 1em;
+  width: 90%;
+  text-align: center;
+}
+
+.announcement h1 {
+  font-size: 1em;
+  margin-bottom: 0;
+  font-family: "UnifrakturCook", cursive;
+}
+
+.announcement footer {
+  font-family: "UnifrakturCook", cursive;
+}
