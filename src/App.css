@@ -118,6 +118,8 @@ header {
   background-color: inherit;
   font-size: 1.2em;
   color: brown;
+  text-decoration: none;
+  text-align: center;
   font-family: "UnifrakturCook", cursive;
 }
 
