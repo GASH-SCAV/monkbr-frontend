@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function PostCard({post, setSelectedPostId, hideMarginaliaButton}){
+function PostCard({post, hideMarginaliaButton}){
   return <div className="post-card">
     <div className="full-name"><span className="name">{post.username}</span> of <span className="city">{post.location}</span></div>
     <div className="post">{post.content}</div>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import UserContainer from "./containers/UserContainer"
 import MonkService from './services/MonkService';
 import Feed from './containers/Feed';
+import { Routes, Route } from 'react-router-dom';
 
 const defaultMonk = {name: "", posts: []}
 
@@ -28,7 +29,10 @@ function App() {
   return (
     <div className="app">
       <main>
-        {monk.name ? <Feed monk={monk} logout={logout}/> : <UserContainer defineUser={defineUser}/>}
+        {monk.name ? <Routes>
+          <Route path="/posts/:id" element = {<Feed monk={monk} logout={logout}/>}/>
+          <Route exact path="/" element = {<Feed monk={monk} logout={logout}/>}/>
+        </Routes> : <UserContainer defineUser={defineUser}/>}
       </main>
     </div>
   )

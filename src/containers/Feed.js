@@ -3,42 +3,29 @@ import Posts from "./Posts"
 import PostForm from "../components/PostForm";
 import PostService from "../services/PostService";
 import Thread from "./Thread";
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useParams } from 'react-router-dom'
 
 function Feed({monk, logout}){
-  const [posts, setPosts] = useState([])
   const [selectedPostId, setSelectedPostId] = useState("")
   const [incrementToRefresh, setIncrementToRefresh] = useState("")
-
-  const fetchPosts = () => (PostService.getPosts().then(setPosts))
+  const { id } = useParams()
   
   const createPost = (content) => {
-    PostService.createPost(monk.id, content, selectedPostId).then((posts) => {
-      setPosts(posts)
+    PostService.createPost(monk.id, content, id).then((posts) => {
       setIncrementToRefresh(incrementToRefresh + 1)
     })
   }
 
-  useEffect(()=> {
-    fetchPosts()
-  }, [])
-
-  const goToFeed = () => {
-    fetchPosts().then(() => setSelectedPostId(""))
-  }
 
   return <>
     <header onClick={() => logout()}>Logout</header>
     <div className="announcement">
-      <marquee><h1>Episcopus Elonius nunc Marginalia ad Monkblr introducit!</h1></marquee>
+      <marquee><h1>Episcopus Elo.then(() => setSelectedPostId(""))nius nunc Marginalia ad Monkblr introducit!</h1></marquee>
       <p>Nunc poteritis respondere membris clericis haereticis in tempore reali.</p>
       <footer>Monkblr: App pro Omnia</footer>
     </div>
     <PostForm createPost={createPost} postId={selectedPostId}/>
-    <Routes>
-      <Route path="/posts/:id" element = {<Thread selectedPostId={selectedPostId} goToFeed={goToFeed} incrementToRefresh={incrementToRefresh}/>}/>
-      <Route exact path="/" element = {<Posts posts={posts} setSelectedPostId={setSelectedPostId} postId={selectedPostId}/>}/>
-    </Routes>
+    {id ? <Thread selectedPostId={selectedPostId} incrementToRefresh={incrementToRefresh}/> : <Posts  incrementToRefresh={incrementToRefresh} />}
   </>
 }
 
