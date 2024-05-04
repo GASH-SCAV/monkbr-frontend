@@ -115,9 +115,11 @@ header {
 
 .child-button {
   border: none;
+  width: 100%;
   background-color: inherit;
   font-size: 1.2em;
   color: brown;
+  display: inline-block;
   text-decoration: none;
   text-align: center;
   font-family: "UnifrakturCook", cursive;

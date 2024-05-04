@@ -15,7 +15,7 @@ function PostCard({post, hideMarginaliaButton, changeLikes, changeCondemns}){
     <div className="full-name"><span className="name">{post.username}</span> of <span className="city">{post.location}</span></div>
     <div className="post">{post.content}</div>
     <div className="date">Anno Domini 1310</div>
-    { !hideMarginaliaButton && <Link className="child-button marginalia" to={`/posts/${post.id}`}>See / Add Marginalia ({post.replies && post.replies.length} notes)</Link> }
+    { !hideMarginaliaButton && <Link className="child-button" to={`/posts/${post.id}`}>See / Add Marginalia ({post.replies && post.replies.length} notes)</Link> }
     <button className="child-button" onClick={bless}>Bless ({post.sanctifies || 0} Bless Ups)</button>
     <button className="child-button" onClick={condemn}>Condemn ({post.condemns || 0} Condemnations)</button>
   </div>
