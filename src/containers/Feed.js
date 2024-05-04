@@ -3,6 +3,7 @@ import Posts from "./Posts"
 import PostForm from "../components/PostForm";
 import PostService from "../services/PostService";
 import Thread from "./Thread";
+import { Route, Routes } from 'react-router-dom'
 
 function Feed({monk, logout}){
   const [posts, setPosts] = useState([])
@@ -34,7 +35,10 @@ function Feed({monk, logout}){
       <footer>Monkblr: App pro Omnia</footer>
     </div>
     <PostForm createPost={createPost} postId={selectedPostId}/>
-    {selectedPostId ? <Thread selectedPostId={selectedPostId} goToFeed={goToFeed} incrementToRefresh={incrementToRefresh}/> : <Posts posts={posts} setSelectedPostId={setSelectedPostId} postId={selectedPostId}/>}
+    <Routes>
+      <Route path="/posts/:id" element = {<Thread selectedPostId={selectedPostId} goToFeed={goToFeed} incrementToRefresh={incrementToRefresh}/>}/>
+      <Route exact path="/" element = {<Posts posts={posts} setSelectedPostId={setSelectedPostId} postId={selectedPostId}/>}/>
+    </Routes>
   </>
 }
 
